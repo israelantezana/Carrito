@@ -18,3 +18,14 @@ Scenario: Creating a product
     | Name            | Computer            |
     | Price           | 1000.00             |
     | Description     | Personal Computer   |
+    
+Scenario: Creating a product without specifying required fields name and price
+  Given there are no products
+  And   I am on the new product page
+
+  When I fill in the following:
+    | Description     | Personal Computer   |
+  And I submit the new product form
+
+  Then I should see "Name can't be blank"
+  And I should see "Price can't be blank"
