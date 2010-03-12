@@ -8,7 +8,12 @@ end
 
 
 Then /^the product should be created with:$/ do |table|
-  pending
+  attrs = table.rows_hash
+  product = Product.first
+  
+  product.name.should                   == attrs["Name"]
+  product.price.should                  == attrs["Price"].to_f
+  product.description.should            == attrs["Description"]
 end
 
 
