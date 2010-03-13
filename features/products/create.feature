@@ -5,7 +5,7 @@ Feature: Creating a product
 
   Scenario: Creating a product
     Given there are no products
-    And   I am on the new product page
+    And I am on the new product page
   
     When I fill in the following:
       | Name            | Computer            |
@@ -16,15 +16,23 @@ Feature: Creating a product
     Then the product should be created with:
       | Name            | Computer            |
       | Price           | 1000.00             |
-      | Description     | Personal Computer   |
-    
-  Scenario: Creating a product without specifying required fields name and price
+      | Description     | Personal Computer   |  
+      
+  Scenario Outline: Validations when creating a product
     Given there are no products
-    And   I am on the new product page
+    And I am on the new product page
 
     When I fill in the following:
-      | Description     | Personal Computer   |
+      | Name            | <name>            |
+      | Price           | <price>           |
     And I submit the new product form
 
-    Then I should see "Name can't be blank"
-    And I should see "Price can't be blank"
+    Then I should see <error_message>
+  
+  Examples:
+    | name       | price     | error_message                              |
+    |            | 12.00     | "Name can't be blank"                      |
+    | computer   |           | "Price can't be blank"                     |
+    | computer   | es        | "Price is not a number"                    |
+    | computer   | -1        | "Price must be greater than or equal to 0" |
+    
