@@ -3,8 +3,13 @@ Given /^there are no products$/ do
 end
 
 Given /^I have a product$/ do
-  @product = Product.new :name => "Product Name", :price => 11.0, :description => "Product description"
-  @product.save
+  @product = Factory(:product)
+end
+
+Given /^the following products:$/ do |table|
+  table.hashes.each do |each|
+    Factory(:product, each)
+  end
 end
 
 When /^I submit the new product form$/ do

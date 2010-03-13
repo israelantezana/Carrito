@@ -10,13 +10,13 @@ module NavigationHelpers
     
     when /the home\s?page/
       '/'
-    
     when /the new product page/
       new_product_path
-    
     when /the edit product page/
       edit_product_path(@product)
-      
+    when /the products page/
+      products_path
+       
     # Add more mappings here.
     # Here is an example that pulls values out of the Regexp:
     #
