@@ -1,4 +1,6 @@
 require 'spec_helper'
+# It is better to add this, so you can run "ruby spec/models/product_spec.rb"
+# require File.expand_path(File.dirname(__FILE__) + '/../spec_helper')
 
 describe Product do
   before(:each) do
