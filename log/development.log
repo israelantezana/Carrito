@@ -1317,3 +1317,129 @@ Completed in 14ms (View: 9, DB: 1) | 200 OK [http://localhost/products]
   [4;35;1mSQL (0.1ms)[0m   [0mSELECT version FROM "schema_migrations"[0m
   [4;36;1mSQL (2.3ms)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20100311164934')[0m
   [4;35;1mSQL (2.8ms)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20100311162920')[0m
+
+
+Processing ProductsController#index (for 127.0.0.1 at 2010-03-13 10:18:48) [GET]
+  [4;35;1mProduct Load (0.5ms)[0m   [0mSELECT * FROM "products" [0m
+Rendering template within layouts/products
+Rendering products/index
+Completed in 14ms (View: 8, DB: 1) | 200 OK [http://localhost/products]
+
+
+Processing ProductsController#new (for 127.0.0.1 at 2010-03-13 10:18:50) [GET]
+Rendering template within layouts/products
+Rendering products/new
+Rendered products/_form (3.3ms)
+Completed in 14ms (View: 9, DB: 0) | 200 OK [http://localhost/products/new]
+
+
+Processing ProductsController#create (for 127.0.0.1 at 2010-03-13 10:23:03) [POST]
+  Parameters: {"commit"=>"Create", "authenticity_token"=>"VIQxYsSSl7sYSk/yGaqYVlBRzrTjY6gHLbmw3pjwut0=", "product"=>{"price"=>"19", "name"=>"name", "description"=>"description"}}
+  [4;36;1mProduct Create (0.4ms)[0m   [0;1mINSERT INTO "products" ("name", "price", "created_at", "photo_file_size", "updated_at", "photo_file_name", "photo_content_type", "description") VALUES('name', 19.0, '2010-03-13 14:23:03', NULL, '2010-03-13 14:23:03', NULL, NULL, 'description')[0m
+[paperclip] Saving attachments.
+Redirected to http://localhost:3000/products/5
+Completed in 62ms (DB: 0) | 302 Found [http://localhost/products]
+
+
+Processing ProductsController#show (for 127.0.0.1 at 2010-03-13 10:23:03) [GET]
+  Parameters: {"id"=>"5"}
+  [4;35;1mProduct Load (0.2ms)[0m   [0mSELECT * FROM "products" WHERE ("products"."id" = 5) [0m
+Rendering template within layouts/products
+Rendering products/show
+Completed in 8ms (View: 3, DB: 0) | 200 OK [http://localhost/products/5]
+
+
+Processing ProductsController#edit (for 127.0.0.1 at 2010-03-13 10:23:05) [GET]
+  Parameters: {"id"=>"5"}
+  [4;36;1mProduct Load (0.2ms)[0m   [0;1mSELECT * FROM "products" WHERE ("products"."id" = 5) [0m
+Rendering template within layouts/products
+Rendering products/edit
+Rendered products/_form (2.7ms)
+Completed in 12ms (View: 6, DB: 0) | 200 OK [http://localhost/products/5/edit]
+
+
+Processing ProductsController#index (for 127.0.0.1 at 2010-03-13 10:23:08) [GET]
+  [4;35;1mProduct Load (0.7ms)[0m   [0mSELECT * FROM "products" [0m
+Rendering template within layouts/products
+Rendering products/index
+Completed in 16ms (View: 11, DB: 1) | 200 OK [http://localhost/products]
+  [4;36;1mProduct Load (0.4ms)[0m   [0;1mSELECT * FROM "products" ORDER BY products.id DESC LIMIT 1[0m
+
+
+Processing ProductsController#destroy (for 127.0.0.1 at 2010-03-13 10:24:36) [DELETE]
+  Parameters: {"authenticity_token"=>"VIQxYsSSl7sYSk/yGaqYVlBRzrTjY6gHLbmw3pjwut0=", "id"=>"2"}
+  [4;36;1mProduct Load (0.2ms)[0m   [0;1mSELECT * FROM "products" WHERE ("products"."id" = 2) [0m
+[paperclip] Deleting attachments.
+  [4;35;1mProduct Destroy (0.3ms)[0m   [0mDELETE FROM "products" WHERE "id" = 2[0m
+Redirected to http://localhost:3000/products
+Completed in 64ms (DB: 1) | 302 Found [http://localhost/products/2]
+
+
+Processing ProductsController#index (for 127.0.0.1 at 2010-03-13 10:24:37) [GET]
+  [4;36;1mProduct Load (0.5ms)[0m   [0;1mSELECT * FROM "products" [0m
+Rendering template within layouts/products
+Rendering products/index
+Completed in 18ms (View: 13, DB: 1) | 200 OK [http://localhost/products]
+
+
+Processing ProductsController#destroy (for 127.0.0.1 at 2010-03-13 10:24:39) [DELETE]
+  Parameters: {"authenticity_token"=>"VIQxYsSSl7sYSk/yGaqYVlBRzrTjY6gHLbmw3pjwut0=", "id"=>"3"}
+  [4;35;1mProduct Load (0.2ms)[0m   [0mSELECT * FROM "products" WHERE ("products"."id" = 3) [0m
+[paperclip] Deleting attachments.
+  [4;36;1mProduct Destroy (0.3ms)[0m   [0;1mDELETE FROM "products" WHERE "id" = 3[0m
+Redirected to http://localhost:3000/products
+Completed in 56ms (DB: 0) | 302 Found [http://localhost/products/3]
+
+
+Processing ProductsController#index (for 127.0.0.1 at 2010-03-13 10:24:39) [GET]
+  [4;35;1mProduct Load (0.5ms)[0m   [0mSELECT * FROM "products" [0m
+Rendering template within layouts/products
+Rendering products/index
+Completed in 11ms (View: 6, DB: 0) | 200 OK [http://localhost/products]
+
+
+Processing ProductsController#destroy (for 127.0.0.1 at 2010-03-13 10:24:44) [DELETE]
+  Parameters: {"authenticity_token"=>"VIQxYsSSl7sYSk/yGaqYVlBRzrTjY6gHLbmw3pjwut0=", "id"=>"5"}
+  [4;36;1mProduct Load (0.3ms)[0m   [0;1mSELECT * FROM "products" WHERE ("products"."id" = 5) [0m
+[paperclip] Deleting attachments.
+  [4;35;1mProduct Destroy (1.3ms)[0m   [0mDELETE FROM "products" WHERE "id" = 5[0m
+Redirected to http://localhost:3000/products
+Completed in 62ms (DB: 2) | 302 Found [http://localhost/products/5]
+
+
+Processing ProductsController#index (for 127.0.0.1 at 2010-03-13 10:24:44) [GET]
+  [4;36;1mProduct Load (0.4ms)[0m   [0;1mSELECT * FROM "products" [0m
+Rendering template within layouts/products
+Rendering products/index
+Completed in 6ms (View: 1, DB: 0) | 200 OK [http://localhost/products]
+
+
+Processing ProductsController#new (for 127.0.0.1 at 2010-03-13 10:24:45) [GET]
+Rendering template within layouts/products
+Rendering products/new
+Rendered products/_form (2.8ms)
+Completed in 11ms (View: 6, DB: 0) | 200 OK [http://localhost/products/new]
+
+
+Processing ProductsController#create (for 127.0.0.1 at 2010-03-13 10:24:58) [POST]
+  Parameters: {"commit"=>"Create", "authenticity_token"=>"VIQxYsSSl7sYSk/yGaqYVlBRzrTjY6gHLbmw3pjwut0=", "product"=>{"price"=>"90", "name"=>"product", "description"=>"description"}}
+  [4;35;1mProduct Create (0.4ms)[0m   [0mINSERT INTO "products" ("name", "price", "created_at", "photo_file_size", "updated_at", "photo_file_name", "photo_content_type", "description") VALUES('product', 90.0, '2010-03-13 14:24:58', NULL, '2010-03-13 14:24:58', NULL, NULL, 'description')[0m
+[paperclip] Saving attachments.
+Redirected to http://localhost:3000/products/6
+Completed in 54ms (DB: 0) | 302 Found [http://localhost/products]
+
+
+Processing ProductsController#show (for 127.0.0.1 at 2010-03-13 10:24:58) [GET]
+  Parameters: {"id"=>"6"}
+  [4;36;1mProduct Load (0.2ms)[0m   [0;1mSELECT * FROM "products" WHERE ("products"."id" = 6) [0m
+Rendering template within layouts/products
+Rendering products/show
+Completed in 8ms (View: 3, DB: 0) | 200 OK [http://localhost/products/6]
+
+
+Processing ProductsController#index (for 127.0.0.1 at 2010-03-13 10:25:01) [GET]
+  [4;35;1mProduct Load (0.4ms)[0m   [0mSELECT * FROM "products" [0m
+Rendering template within layouts/products
+Rendering products/index
+Completed in 11ms (View: 6, DB: 0) | 200 OK [http://localhost/products]
+  [4;35;1mProduct Load (0.4ms)[0m   [0mSELECT * FROM "products" ORDER BY products.id DESC LIMIT 1[0m
