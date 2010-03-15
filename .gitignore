@@ -4,4 +4,5 @@
 db/*.sqlite3
 log/
 public/system/
-
+!pub.txt
+public/files
