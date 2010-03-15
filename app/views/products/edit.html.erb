@@ -1,6 +1,6 @@
 <h1>Editing product</h1>
 
-<% form_for(@product) do |f| %>
+<% form_for @product, :html => { :multipart => true } do |f| %>
   
   <%= render :partial => "form", :locals => { :f => f }%>
  

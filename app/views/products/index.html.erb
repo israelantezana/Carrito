@@ -10,6 +10,7 @@
 <%= link_to 'Add Product', new_product_path %>
 <% @products.each do |product| %>
   <tr>
+    <td><%= image_tag product.photo.url(:thumb) %></td>
     <td><%=h product.name %></td>
     <td><%=h product.price %></td>
     <td><%=h product.description %></td>
